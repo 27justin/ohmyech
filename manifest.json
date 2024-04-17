@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "OhMyECH - ECH Indicator",
+	"version": "1.0",
+
+	"description": "Add a visual indication whether a site uses ECH (Encrpted-Client-Hello), or not to the address bar.",
+	"icons": {
+		"48": "icons/ech.svg"
+	},
+	"permissions": [
+		"tabs",
+		"webNavigation",
+		"webRequest",
+		"webRequestBlocking",
+		"<all_urls>"
+	],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"page_action": {
+		"default_icon": {
+			"48": "icons/ech.svg"
+		},
+		"default_title": "Oh My ECH"
+	}
+}
