@@ -23,6 +23,8 @@ Meaning that if ~example.com~ were ECH, but fetches an image from ~cdn.example.c
 
 * Screenshots
 
+#+HTML: <img src="https://github.com/27justin/ohmyech/assets/72092018/ba6abc9b-e2ed-48b3-a799-0701031640b9" title="Active" />
+#+HTML: <img src="https://github.com/27justin/ohmyech/assets/72092018/db794212-2c8d-4dea-ad61-128a464560e0" title="Inactive" />
 
 * Tests
 
