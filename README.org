@@ -1,0 +1,35 @@
+#+TITLE: OhMyECH - ECH Indicator
+#+AUTHOR: Justin Andreas Lacoste
+#+EMAIL: me@justin.cx
+
+* Introduction
+
+This extension adds an icon to Firefox's address bar which indicates whether this this page
+used [[https://en.wikipedia.org/wiki/Server_Name_Indication#Encrypted_Client_Hello][Encrypted-Client-Hello (ECH)]] or not.
+
+ECH is a much needed privacy extension that landed in Firefox 118. Before the days of ECH, any middleman (e.g. your ISP) between your device
+and the server you're talking to was able to sniff out the domain of the page you're visiting ([[https://en.wikipedia.org/wiki/Server_Name_Indication][using the **SNI** of the Client-Hello]]).
+
+I believe that an indication for ECH is as important as one for HTTP(S), thus this extension.
+
+* Usage
+
+After installing, whenever you navigate to a new page, on the right side of your address bar should appear a lock icon.
+A red one indicates that ECH was not used, a green one that it was used.
+
+The icon may at any given point turn red, should any subsequent fetch of the page (Image download, etc.) not have used ECH,
+this check is not constrained to the current domain.
+Meaning that if ~example.com~ were ECH, but fetches an image from ~cdn.example.com~, which doesn't use ECH, the lock will turn red.
+
+* Screenshots
+
+
+* Tests
+
+Test whether the Extension, and in extension ECH works for your device/browser:
+
++ [[https://defo.ie/ech-check.php]]
+
+* Credits
+
++ [[https://github.com/lucide-icons/lucide][Lucide]] for the Lock SVGs
