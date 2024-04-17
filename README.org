@@ -4,7 +4,7 @@
 
 * Introduction
 
-This extension adds an icon to Firefox's address bar which indicates whether this this page
+This extension adds an icon to Firefox's address bar which indicates whether this page
 used [[https://en.wikipedia.org/wiki/Server_Name_Indication#Encrypted_Client_Hello][Encrypted-Client-Hello (ECH)]] or not.
 
 ECH is a much needed privacy extension that landed in Firefox 118. Before the days of ECH, any middleman (e.g. your ISP) between your device
