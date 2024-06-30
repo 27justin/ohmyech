@@ -16,21 +16,27 @@ I believe that an indication for ECH is as important as one for HTTP(S), thus th
 * Usage
 
 After installing, whenever you navigate to a new page, on the right side of your address bar should appear a lock icon.
-A red one indicates that ECH was not used, a green one that it was used.  An orange lock indicates that some resource
-was loaded with ECH during the stay on the page, this may be an image, an AJAX request, or anything at all, but not
-necessarily the TLD domain you're on.
+To properly communicate how ECH was used, OhMyECH may display four different lock icons:
 
-The icon may at any given point turn red, should any subsequent fetch of the page (Image download, etc.) not have used
-ECH, this check is not constrained to the current domain.  Meaning that if ~example.com~ were ECH, but fetches an image
-from ~cdn.example.com~, which doesn't use ECH, the lock will turn red.
+| Colour | Meaning                                                                             |
+|--------+-------------------------------------------------------------------------------------|
+| Red    | At no point in time was ECH used within this tab.                                   |
+| Green  | Every request originating from this tab used ECH (Best-case).                       |
+| Blue   | The initial page load (the first request) used ECH, but subsequent fetches did not. |
+| Orange | The initial page load did not use ECH, but a subsequent fetch did.                  |
 
-Similarly, the lock may also turn orange if any subsequent fetch did use ECH, but no previous was fully encrypted.
+During the lifetime of the tab, the lock may change colour.
+
+The state of the OhMyECH lock is constrained on a tab-per-tab basis, any request originating from a tab is used in
+determining the tabs ECH state, this includes AJAX fetches, images, scripts, etc. These checks also work cross-site,
+meaning that if ~example.com~ were to load something from ~cdn.example.com~, it would still affect the ECH state.
 
 * Screenshots
 
 #+HTML: <img src="https://github.com/27justin/ohmyech/assets/72092018/ba6abc9b-e2ed-48b3-a799-0701031640b9" title="Active" />
 #+HTML: <img src="https://github.com/27justin/ohmyech/assets/72092018/db794212-2c8d-4dea-ad61-128a464560e0" title="Inactive" />
-#+HTML: <img src="https://github.com/27justin/ohmyech/assets/72092018/8710c455-9184-44a7-aed0-cabc13f7b7bb" title="Semi-active" />
+#+HTML: <img src="https://github.com/27justin/ohmyech/assets/72092018/8710c455-9184-44a7-aed0-cabc13f7b7bb" title="Partial" />
+#+HTML: <img src="https://github.com/27justin/ohmyech/assets/72092018/9dd384c6-5fdc-4b02-ada6-16d2c18972b0" title="Initial" />
 
 * Tests
 
