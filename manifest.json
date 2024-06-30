@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "OhMyECH - ECH Indicator",
-	"version": "1.0",
+	"version": "1.1",
 
 	"description": "Add a visual indication whether a site uses ECH (Encrpted-Client-Hello), or not to the address bar.",
 	"icons": {
